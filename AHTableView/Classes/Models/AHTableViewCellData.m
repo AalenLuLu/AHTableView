@@ -10,4 +10,24 @@
 
 @implementation AHTableViewCellData
 
++ (Class)viewClass
+{
+	return NSClassFromString(@"AHTableViewCell");
+}
+
++ (Class)viewModelClass
+{
+	return NSClassFromString(@"AHTableViewCellViewModel");
+}
+
+- (Class)viewClass
+{
+	return [[self class] viewClass];
+}
+
+- (Class)viewModelClass
+{
+	return [[self class] viewModelClass];
+}
+
 @end

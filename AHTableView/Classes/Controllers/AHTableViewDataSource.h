@@ -19,5 +19,7 @@
 
 //key: cell, headerfooter
 - (void)tableView: (UITableView *)tableView registerClassWithNames: (NSDictionary<NSString *, NSArray<NSString *> *> *)names;
+- (void)tableView: (UITableView *)tableView registerCellWithClass: (Class)cellClass reuseIdentifier: (NSString *)identifier;
+- (void)tableView: (UITableView *)tableView registerHeaderFooterViewWithClass: (Class)headerFooterClass reuseIdentifier: (NSString *)identifier;
 
 @end

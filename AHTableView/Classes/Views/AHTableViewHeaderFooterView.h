@@ -13,7 +13,6 @@
 @interface AHTableViewHeaderFooterView : UITableViewHeaderFooterView
 
 @property (strong, nonatomic) AHTableViewHeaderFooterViewModel *viewModel;
-@property (strong, nonatomic) UILabel *descriptionLabel;
 
 - (CGFloat)reload;
 

@@ -13,9 +13,6 @@
 @interface AHTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) AHTableViewCellViewModel *viewModel;
-@property (strong, nonatomic) UIImageView *avatarImageView;
-@property (strong, nonatomic) UILabel *titleLabel;
-@property (strong, nonatomic) UILabel *descriptionLabel;
 
 - (CGFloat)reload;
 

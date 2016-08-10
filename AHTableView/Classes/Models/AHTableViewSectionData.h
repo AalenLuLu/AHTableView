@@ -12,11 +12,18 @@
 
 @interface AHTableViewSectionData : NSObject
 
-@property (copy, nonatomic) NSString *headerName;
-@property (copy, nonatomic) NSString *headerViewModelName;
-@property (copy, nonatomic) NSString *footerName;
-@property (copy, nonatomic) NSString *footerViewModelName;
 @property (copy, nonatomic) NSDictionary *data;
 @property (strong, nonatomic) NSMutableArray<AHTableViewCellData *> *items;
+
++ (Class)headerViewClass;
++ (Class)headerViewModelClass;
++ (Class)footerViewClass;
++ (Class)footerViewModelClass;
+
+//Can not override...
+- (Class)headerViewClass;
+- (Class)headerViewModelClass;
+- (Class)footerViewClass;
+- (Class)footerViewModelClass;
 
 @end

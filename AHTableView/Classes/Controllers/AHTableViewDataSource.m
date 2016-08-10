@@ -53,6 +53,22 @@
 	}];
 }
 
+- (void)tableView:(UITableView *)tableView registerCellWithClass:(Class)cellClass reuseIdentifier:(NSString *)identifier
+{
+	if(cellClass && identifier)
+	{
+		[tableView registerClass: cellClass forCellReuseIdentifier: identifier];
+	}
+}
+
+- (void)tableView:(UITableView *)tableView registerHeaderFooterViewWithClass:(Class)headerFooterClass reuseIdentifier:(NSString *)identifier
+{
+	if(headerFooterClass && identifier)
+	{
+		[tableView registerClass: headerFooterClass forHeaderFooterViewReuseIdentifier: identifier];
+	}
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 	return _data.count;
@@ -69,16 +85,27 @@
 	AHTableViewSectionData *section = _data[indexPath.section];
 	AHTableViewCellData *cellData = section.items[indexPath.row];
 	
-	AHTableViewCellViewModel *viewModel = _viewModels[cellData.viewModelName];
+	Class viewModelClass = [cellData viewModelClass];
+	
+	NSAssert(viewModelClass, @"cell的view model不能为空...");
+	
+	NSString *viewModelName = NSStringFromClass([cellData viewModelClass]);
+	
+	AHTableViewCellViewModel *viewModel = _viewModels[viewModelName];
 	if(nil == viewModel)
 	{
-		Class viewModelClass = NSClassFromString(cellData.viewModelName);
 		viewModel = [[viewModelClass alloc] init];
-		_viewModels[cellData.viewModelName] = viewModel;
+		_viewModels[viewModelName] = viewModel;
 	}
 	viewModel.data = cellData;
 	
-	AHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellData.cellName forIndexPath: indexPath];
+	Class viewClass = [cellData viewClass];
+	
+	NSAssert(viewClass, @"cell的view不能为空...");
+	
+	NSString *viewName = NSStringFromClass(viewClass);
+	
+	AHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: viewName forIndexPath: indexPath];
 	cell.viewModel = viewModel;
 	CGFloat height = [cell reload];
 	NSString *indexKey = [[NSString alloc] initWithFormat: @"%lu - %lu", indexPath.section, indexPath.row];
@@ -90,12 +117,20 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	AHTableViewSectionData *sectionData = _data[section];
+	if([sectionData headerViewClass])
+	{
+		return nil;
+	}
 	return sectionData.data[@"header"];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
 	AHTableViewSectionData *sectionData = _data[section];
+	if([sectionData footerViewClass])
+	{
+		return nil;
+	}
 	return sectionData.data[@"footer"];
 }
 
