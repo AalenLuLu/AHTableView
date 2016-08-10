@@ -13,8 +13,6 @@
 #import "AHTableViewCell.h"
 #import "AHTableViewCellViewModel.h"
 
-#import <objc/runtime.h>
-
 @implementation AHTableViewDataSource
 
 - (instancetype)init

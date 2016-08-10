@@ -15,6 +15,6 @@
 @property (strong, nonatomic) AHTableViewHeaderFooterViewModel *viewModel;
 @property (strong, nonatomic) UILabel *descriptionLabel;
 
-- (void)reload;
+- (CGFloat)reload;
 
 @end

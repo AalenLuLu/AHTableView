@@ -12,9 +12,11 @@
 
 @implementation AHTableViewHeaderFooterView
 
-- (void)reload
+- (CGFloat)reload
 {
-	
+	[_viewModel reloadDataWithHeaderFooterView: self];
+	[_viewModel layoutWithHeaderFooterView: self];
+	return _viewModel.height;
 }
 
 /*
