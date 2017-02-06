@@ -41,19 +41,19 @@
 	cell3.data = @{@"title": @"Title", @"description": @"Description"};
 	
 	AHTableViewCellData *cell4 = [[AHTableViewCellData alloc] init];
-	cell4.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
+	cell4.data = @{@"text": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
 	
 	DemoCellData *cell5 = [[DemoCellData alloc] init];
 	cell5.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
 	
 	AHTableViewCellData *cell6 = [[AHTableViewCellData alloc] init];
-	cell6.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
+	cell6.data = @{@"text": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
 	
 	DemoCellData *cell7 = [[DemoCellData alloc] init];
 	cell7.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
 	
 	AHTableViewCellData *cell8 = [[AHTableViewCellData alloc] init];
-	cell8.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
+	cell8.data = @{@"text": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
 	
 	DemoCellData *cell9 = [[DemoCellData alloc] init];
 	cell9.data = @{@"title": @"Title", @"description": @"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription"};
